@@ -1,10 +1,10 @@
 module.exports = {
   "development": {
-    "username": process.env.DEV_USERNAME,
-    "password": process.env.DEV_PASSWORD,
-    "database": process.env.DEV_DATABASE,
-    "host": process.env.DEV_HOST,
-    "port": process.env.DEV_PORT,
+    "username": "root",
+    "password": "Jlee1470!!",
+    "database": "metamusic_db",
+    "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {

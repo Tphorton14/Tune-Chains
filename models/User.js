@@ -11,12 +11,13 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         user_email: DataTypes.STRING,
+        
         user_password: {
             type: DataTypes.STRING,
         },
         artistname: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         createdAt: {
             type: DataTypes.DATE,
@@ -25,9 +26,7 @@ module.exports = function (sequelize, DataTypes) {
         updatedAt: {
             type: DataTypes.DATE,
             allowNull: true
-        }
-    });
-
+        },
         googleProviderId: DataTypes.STRING,
         googleProviderToken: DataTypes.STRING
     });
