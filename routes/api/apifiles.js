@@ -1,10 +1,22 @@
-// const router = require("express").Router();
-// const {fileUploads, sampleUploads} = require("../filesAPI/normalizeFileData");
-// const songsController = require("../../../controllers/songsController");
+const router = require("express").Router();
+const {fileUploads, sampleUploads} = require("../filesAPI/normalizeFileData");
+const songsController = require("../../../controllers/songsController");
+import ReactS3 from 'react-s3';
 
-// router.route("/fileUploads")
+const config = {
+    bucketName: 'tunechains',
+    albumName: 'songs',
+    region: 'eu-west-1',
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+}
+
+// router.route("/uploads")
 //   .get(fileUploads.findAll)
-//   .post(songsController.create);
+//   .post(ReactS3.upload(file, config)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.error(err)));
+
 
 
 // router
