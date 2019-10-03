@@ -37,6 +37,12 @@ app.use(cookieParser());
 app.use(express.json());
 
 
+const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+})
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "./client/build")));
@@ -47,6 +53,19 @@ var SpotifyWebApi = require('spotify-web-api-node');
 
 // Add routes, both API
 app.use(routes);
+
+app.post('/upload-song', (req, res) => {
+    const params = {
+        Bucket: 'tunechains',
+        Key: req.body.filename,
+        Body: JSON.stringify(req.body.file, null, 2)
+    };
+    s3.upload(params, function(err, data) {
+        if(err) throw err;
+        console.log(`File uploaded successfully at ${data.Location}`)
+    });
+})
+
 
 if (process.env.NODE_ENV === "production") {
     app.get("*", function (req, res) {
