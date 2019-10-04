@@ -1,12 +1,14 @@
 //audio adjusters based off of MDN documentation
 
-import React, { Component } from "react";
-const Spotify = require("../components/Spotify");
+import React, { Component } from "react"
+import AudioEditor from '../../src/components/AudioEditor/AudioEditor'
+// const Spotify = require("../components/Spotify")
 
 class AudioEditor extends Component {
     render() {
         <div className="container-fluid">
             <div className="jumbotron">
+                <AudioEditor />
                 <section className="tape">
                     <audio src="" crossorigin="anonymous" ></audio>
                     <button className="playButton" aria-checked="false">

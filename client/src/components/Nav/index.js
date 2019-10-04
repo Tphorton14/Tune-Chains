@@ -5,8 +5,9 @@ function Nav() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
-          <a href="../login">Sign Up / Login</a>
+          <a href="../login">Login</a>
           <a href="../dashboard">Dashboard</a>
+          <a href="../audioeditor">Audio Editor</a>
       </nav>
     </div>
   );

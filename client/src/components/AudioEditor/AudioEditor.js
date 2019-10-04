@@ -55,8 +55,6 @@ class AudioEditor extends React.Component {
     }
 
 
-
-
     render() {
         function getTime(time) {
             if (!isNaN(time)) {
@@ -65,6 +63,7 @@ class AudioEditor extends React.Component {
         }
         const currentTime = getTime(this.state.currentTime)
         const duration = getTime(this.state.duration)
+        
         return (
             <>
                 <h1>Audio Editor</h1>
